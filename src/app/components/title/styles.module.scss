@@ -1,0 +1,27 @@
+.title {
+  position: relative;
+  padding-left: 78px;
+  max-width: 354px;
+  text-align: left;
+  font-size: 36px;
+  color: #42567A;
+
+  @media (max-width: 768px) {
+    padding-left: 0;
+  }
+
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #3877EE -5%, #EF5DA8 85%);
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}

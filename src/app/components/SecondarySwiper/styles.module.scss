@@ -1,0 +1,108 @@
+@import '../../vars.module.scss';
+
+.swiperWrapper {
+  position: relative;
+  margin-top: 40px;
+  padding: 0 78px;
+  opacity: 0;
+  transition: opacity 0s ease-out;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.show {
+  opacity: 1;
+  transition: opacity .3s ease-in .7s;
+}
+
+.swiperWrapper > div:first-child > div:last-child {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.swiperItem {
+  max-width: 300px;
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+  }
+
+  @media (max-width: 500px) {
+    max-width: 170px;
+  }
+}
+
+.wrapper {
+  max-width: 400px;
+  min-width: 160px;
+  height: 200px;
+
+  @media (max-width: 768px) {
+    height: 200px;
+  }
+}
+
+.title {
+  font-size: 20px;
+  color: $primary-color;
+}
+
+.text {
+  margin-top: 10px;
+  color: #42567A;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 40%;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    cursor: pointer;
+
+    &:hover {
+      background: #b4b2b2;
+    }
+
+    svg path {
+      width: 14px;
+      height: 14px;
+      stroke: $primary-color;
+    }
+
+    &[disabled] {
+      background: transparent;
+    }
+
+    &[disabled] svg {
+      opacity: 0;
+    }
+
+    &:last-child svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

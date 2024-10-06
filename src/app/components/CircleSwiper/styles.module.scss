@@ -1,0 +1,82 @@
+@import '../../vars.module.scss';
+
+.wrapper {
+  position: absolute;
+  z-index: 2;
+  top: 25%;
+  left: 35.4%;
+  width: 300px;
+  height: 300px;
+  border: 1px solid $primary-color;
+  border-radius: 50%;
+  transform-origin: center;
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+
+.item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $primary-color;
+  color: $primary-color;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+  transition: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+
+  &.active {
+    width: 50px;
+    height: 50px;
+    background: #F4F5F9;
+
+    span {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    width: 50px;
+    height: 50px;
+    background: #F4F5F9;
+
+    span {
+      opacity: 1;
+    }
+  }
+
+  span {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.item p {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0s ease-out;
+}
+
+.item.active p {
+  top: 50%;
+  left: 110%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: opacity .3s ease-in .7s;
+}
